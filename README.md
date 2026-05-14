@@ -50,7 +50,7 @@ We provide **fully customized AI solutions** tailored to your specific business 
 
 ---
 ### 🤝 Let's Automate Your Business
-Interested in a custom AI agent for your company? [Contact us on TutoHub](https://tutohub.in) to discuss your requirements.
+Interested in a custom AI agent for your company? [Contact us on TutoHub](https://tutohub.com/contact) to discuss your requirements.
 
 Built with ❤️ for **TutoHub**
 
