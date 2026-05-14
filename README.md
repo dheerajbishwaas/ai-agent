@@ -1,74 +1,56 @@
-# School Support AI Agent 🏫🤖
+# AI Smart Support Agent 🏫🤖
 
-An intelligent customer support agent built with Node.js and LangChain to handle school-related queries from parents. This agent can verify student details, check fee status, and log unanswered questions for administrative review.
+An autonomous, multi-model AI customer support system designed for schools and businesses. Built with **Node.js**, **LangChain**, and **LangGraph**, this agent provides intelligent data retrieval, automated task execution, and seamless business integration.
 
 ## 🚀 Overview
 
-This project is designed to bridge the communication gap between schools and parents. It uses advanced AI models (Gemini/Groq) to provide human-like responses and integrates with a mock database to provide real-time student information.
+The AI Smart Support Agent is more than just a chatbot; it's a comprehensive business automation tool. It bridges the gap between customer queries and internal data, using advanced LLMs (Gemini, Groq, or Local Models) to make smart decisions, generate support tickets, and send automated notifications.
 
 ## ✨ Key Features
 
-- **Student Detail Verification:** Automatically checks parent name and phone number against the database to fetch student records (class, attendance, fee status).
-- **Intelligent Query Handling:** Answers general questions about school timings, holidays, and policies using LangChain.
-- **Unanswered Query Logging:** If the AI is unsure about a specific query, it logs the question to `unanswered_queries.json` so that school staff can respond later.
-- **Multi-Model Support:** Configurable to use either Google Gemini or Groq (for faster inference and avoiding rate limits).
-- **Express Backend:** A robust server to handle API requests and serve the chat interface.
+- **🧠 Intelligent Decision Making:** AI analyzes incoming queries and decides the best course of action (solution from DB, ticket generation, or human escalation).
+- **📊 Real-time DB Integration:** Seamlessly verifies records (e.g., student attendance, fee status, order history) to provide personalized responses.
+- **🎟️ Auto Ticket Generation:** Automatically creates support tickets if a complex issue is detected, ensuring no query is left unresolved.
+- **📱 Automated Notifications:** Integrated logic for sending **SMS** and **Email** alerts based on AI decision-making (e.g., urgent payment reminders or attendance alerts).
+- **📞 IVR & Voice Readiness:** Designed to integrate with IVR calling systems for automated voice assistance.
+- **🌐 Multi-Model Support:** Plug-and-play support for **Google Gemini**, **Groq (Llama-3)**, or **Self-Hosted Local LLMs** for maximum privacy and performance.
+
+## 🏢 Business Customization
+
+We provide **fully customized AI solutions** tailored to your specific business needs. Whether you are a school, an e-commerce platform, or a service provider, we can:
+- **Train Custom Models:** Fine-tune AI models on your private business data for pinpoint accuracy.
+- **System Integration:** Deploy the AI directly within your local infrastructure for enhanced data security.
+- **Workflow Automation:** Automate repetitive tasks like billing, appointment scheduling, and customer follow-ups.
+- **Branded Experience:** Customize the AI's personality and tone to match your brand identity.
 
 ## 🛠️ Tech Stack
 
 - **Backend:** Node.js, Express.js
-- **AI Framework:** LangChain, LangGraph
-- **Models:** Google Gemini Pro / Groq (Llama-3)
-- **Database:** JSON-based Mock Database (db.js)
-- **Validation:** Zod (for structured data and tool inputs)
-
-## 📁 Project Structure
-
-- `server.js`: The main entry point for the Express server.
-- `agent.js`: Contains the LangChain logic and AI agent configuration.
-- `db.js`: Mock database and helper functions for data retrieval and logging.
-- `unanswered_queries.json`: Store for queries the agent couldn't resolve.
-- `public/`: Contains frontend assets for the chat UI.
-- `.env`: Environment variables for API keys.
-
-## ⚙️ Setup Instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone <your-repo-url>
-   cd ai-agent
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory and add your API keys:
-   ```env
-   GOOGLE_GENAI_API_KEY=your_gemini_key_here
-   GROQ_API_KEY=your_groq_key_here
-   PORT=3000
-   ```
-
-4. **Run the application:**
-   ```bash
-   node server.js
-   ```
+- **Orchestration:** LangChain, LangGraph
+- **Intelligence:** Google Gemini Pro, Groq (Llama-3), or Local LLMs
+- **Storage:** JSON-based (Default), scalable to SQL/NoSQL
+- **Reliability:** Zod validation for structured AI outputs
 
 ## 📝 How it Works
 
-1. **Input:** The parent sends a message (e.g., "Mera bacha Aarav ki attendance kya hai?").
-2. **Analysis:** The AI agent analyzes the intent and determines if it needs to fetch data from the database.
-3. **Tool Calling:** If needed, it calls the `fetchStudentDetails` tool with parent name and phone number.
-4. **Response:** It generates a natural language response based on the database result.
-5. **Fallback:** If the query is complex or data is missing, it uses the `logUnansweredQuery` tool to save the request for human intervention.
+1. **Query Analysis:** AI receives a query and identifies the intent using NLP.
+2. **Data Lookup:** If needed, it fetches context from your database (e.g., student details).
+3. **Smart Decision:**
+   - **Option A:** Provide a direct solution based on DB context.
+   - **Option B:** Generate a support ticket and notify the admin.
+   - **Option C:** Trigger an automated SMS/Email if the situation is urgent.
+4. **Natural Response:** The AI delivers a human-like response to the user.
 
-## 🛡️ Limitations
+## 🛡️ Current Limitations
 
-- Currently uses a mock database (`db.js`). Integration with a real SQL/NoSQL database is recommended for production.
-- Response accuracy depends on the underlying LLM's performance.
+- **Hardware Dependency:** Running high-performance local models requires dedicated GPU resources.
+- **API Limits:** External models (Gemini/Groq) are subject to third-party rate limits and pricing.
+- **Database Scope:** Current version uses a mock database; full SQL/NoSQL integration requires custom setup.
+- **Calling Integration:** Voice/IVR features require separate integration with providers like Twilio or Exotel.
 
 ---
+### 🤝 Let's Automate Your Business
+Interested in a custom AI agent for your company? [Contact us on TutoHub](https://tutohub.in) to discuss your requirements.
+
 Built with ❤️ for **TutoHub**
+
